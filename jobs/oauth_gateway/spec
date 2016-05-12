@@ -9,4 +9,13 @@ templates:
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
-properties: {}
+  config/application.yml.erb: config/application.yml
+properties:
+  oauth_gateway.ssoServiceUrl:
+    description: oauth service url  
+  oauth_gateway.clientId:
+    description: oauth client id  
+  oauth_gateway.clientSecret:
+    description: oauth client secret   
+  oauth_gateway.backend_url:
+    description: protected backend url  
