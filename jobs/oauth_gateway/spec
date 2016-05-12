@@ -1,6 +1,8 @@
 ---
 name: oauth_gateway
-packages: []
+packages:
+- openjdk
+- oauth_gateway_pkg
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger
