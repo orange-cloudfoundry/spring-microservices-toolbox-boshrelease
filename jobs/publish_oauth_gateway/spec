@@ -1,7 +1,19 @@
 ---
 name: publish_oauth_gateway
-packages: []
-templates:
+packages:
+- oauth_gateway_pkg
+- cli
+ templates:
   bin/run: bin/run
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
-  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh*
+properties:
+  oauth_gateway.ssoServiceUrl:
+    description: oauth service url  
+  oauth_gateway.clientId:
+    description: oauth client id  
+  oauth_gateway.clientSecret:
+    description: oauth client secret   
+  oauth_gateway.backend_url:
+    description: protected backend url  
+
