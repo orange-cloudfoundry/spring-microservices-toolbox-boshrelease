@@ -8,4 +8,5 @@ CPUS=$(grep -c ^processor /proc/cpuinfo)
 # $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
 export HOME=/var/vcap
 
+cp -r ${BOSH_COMPILE_TARGET}/*.jar ${BOSH_INSTALL_TARGET}
 
