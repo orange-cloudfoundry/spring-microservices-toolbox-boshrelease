@@ -37,5 +37,7 @@ properties:
     example: default
   cf.target_space:
     description: 'Password of the admin user'
+  cf.appname:
+    description: cf app name to push
     
     
