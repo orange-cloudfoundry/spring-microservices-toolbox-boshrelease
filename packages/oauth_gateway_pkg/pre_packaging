@@ -6,7 +6,7 @@ set -x
 
 cd ${BUILD_DIR}/oauth_gateway
 ./mvnw clean install -DskipTests=true
-cp target/*.jar  ${BUILD_DIR}/*.jar
+cp target/*.jar  ${BUILD_DIR}
 
 cd ${BUILD_DIR}
 rm -rf oauth_gateway
