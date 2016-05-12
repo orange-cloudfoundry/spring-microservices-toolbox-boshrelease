@@ -1,0 +1,5 @@
+check process oauth_gateway
+  with pidfile /var/vcap/sys/run/oauth_gateway/oauth_gateway.pid
+  start program "/var/vcap/jobs/oauth_gateway/bin/monit_debugger oauth_gateway_ctl '/var/vcap/jobs/oauth_gateway/bin/ctl start'"
+  stop program "/var/vcap/jobs/oauth_gateway/bin/monit_debugger oauth_gateway_ctl '/var/vcap/jobs/oauth_gateway/bin/ctl stop'"
+  group vcap
