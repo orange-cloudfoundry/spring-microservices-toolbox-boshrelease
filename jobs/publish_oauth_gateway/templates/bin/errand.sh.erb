@@ -10,6 +10,6 @@ CF_ORG='<%= p("cf.org") %>'
 CF_DEFAULT_SPACE='<%= p("cf.default_space") %>'
 CF_TARGET_SPACE='<%= p("cf.target_space") %>'
 
-cf login -a $CF_API_URL  -u $CF_USERNAME -p CF_PASSWORD  -o $CF_ORG -s $CF_DEFAULT_SPACE --skip-ssl-validation
+cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFAULT_SPACE --skip-ssl-validation
 
 
