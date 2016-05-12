@@ -1,7 +1,6 @@
 ---
 blobstore:
-  provider: swift
+  provider: s3
   options:
-    container_name: spring-microservices-toolbox-boshrelease
-    swift_provider: openstack
+    bucket_name: spring-microservices-toolbox
 final_name: spring-microservices-toolbox
