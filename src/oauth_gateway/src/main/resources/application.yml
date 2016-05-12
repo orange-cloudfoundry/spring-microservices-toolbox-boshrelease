@@ -1,0 +1,52 @@
+server:
+  port: ${PORT:8080}
+  tomcat:
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
+    internal_proxies: 10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|169\.254\.\d{1,3}\.\d{1,3}|127\.\d{1,3}\.\d{1,3}\.\d{1,3}|172\.1[6-9]{1}\.\d{1,3}\.\d{1,3}|172\.2[0-9]{1}\.\d{1,3}\.\d{1,3}|172\.3[0-1]{1}\.\d{1,3}\.\d{1,3}
+
+management:
+  context-path: /admin
+
+spring:
+  application:
+    name: oauth-proxy
+
+endpoints:
+  restart:
+    enabled: true
+
+
+security:
+  #ignored: /favicon.ico, /
+  ignored: /favicon.ico
+  basic:
+    enabled: false
+  user:
+    password: none
+
+#https://jmnarloch.wordpress.com/2015/10/21/spring-cloud-eureka-zuul-and-oauth2-scaling-out-authorization-server/
+#https://spring.io/blog/2015/11/30/migrating-oauth2-apps-from-spring-boot-1-2-to-1-3    
+  oauth2:
+    client:
+      clientId: ${clientId}
+      clientSecret: ${clientSecret}
+      accessTokenUri: ${ssoServiceUrl}/oauth/token
+      userAuthorizationUri: ${ssoServiceUrl}/oauth/authorize
+    resource:
+      userInfoUri: ${ssoServiceUrl}/me
+
+zuul:
+  routes:
+    resources:
+      path: /resources/**
+      url: ${backend_url}
+      
+
+#eureka:
+#  client:
+#    enabled: false
+
+logging:
+  level:
+    org.springframework.security: DEBUG
