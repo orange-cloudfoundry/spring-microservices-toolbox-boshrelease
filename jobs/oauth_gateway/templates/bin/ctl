@@ -17,11 +17,6 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap oauth_gateway \
-         >>$LOG_DIR/$JOB_NAME.log 2>&1
-
-    ;;
-
 
 	exec chpst -u vcap:vcap $JAVA_HOME/bin/java  \
                -server -XX:+UseG1GC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=25 -Xms128M -Xmx256M -Dlogback.configurationFile=$JOB_DIR/config/logback.xml \
