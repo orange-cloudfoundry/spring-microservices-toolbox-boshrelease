@@ -7,6 +7,7 @@ templates:
   bin/run: bin/run
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
+  bin/errand.sh.erb: bin/errand.sh
 
 properties:
   oauth_gateway.ssoServiceUrl:
