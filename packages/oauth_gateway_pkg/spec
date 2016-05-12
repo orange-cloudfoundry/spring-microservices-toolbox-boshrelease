@@ -1,4 +1,7 @@
 ---
 name: oauth_gateway_pkg
 dependencies: []
-files: []
+files:
+- oauth_gateway/**/*
+- openjdk/*
+- common/setup-java-prepackaging.sh
