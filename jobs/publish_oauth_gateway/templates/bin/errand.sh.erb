@@ -10,11 +10,20 @@ CF_ORG='<%= p("cf.org") %>'
 CF_DEFAULT_SPACE='<%= p("cf.default_space") %>'
 CF_TARGET_SPACE='<%= p("cf.target_space") %>'
 
+
+CF_APP_NAME='oauth-gateway-app'
+
 cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFAULT_SPACE --skip-ssl-validation
 
 cf create-space $CF_TARGET_SPACE
 cf target -s $CF_TARGET_SPACE
-cf push oauth-gateway-app -p /var/vcap/packages/oauth_gateway_pkg/oauthproxy.jar
+cf push $CF_APP_NAME  -p /var/vcap/packages/oauth_gateway_pkg/oauthproxy.jar -i 2 --no-start
 
+cf set-env $CF_APP_NAME ssoServiceUrl <%= p('oauth_gateway.ssoServiceUrl') %>
+cf set-env $CF_APP_NAME clientId <%= p('oauth_gateway.clientId') %>
+cf set-env $CF_APP_NAME clientSecret <%= p('oauth_gateway.clientSecret') %>
+cf set-env $CF_APP_NAME backend_url <%= p('oauth_gateway.backend_url') %>
 
+cf start $CF_APP_NAME
+cf restage $CF_APP_NAME
 
