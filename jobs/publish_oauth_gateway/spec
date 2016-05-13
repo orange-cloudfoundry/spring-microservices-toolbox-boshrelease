@@ -38,6 +38,8 @@ properties:
   cf.target_space:
     description: 'Password of the admin user'
   cf.appname:
-    description: cf app name to push
+    description: cf app name to push. will also be the hostname on cf.domain
+  cf.domain:
+    description: domain name to expose the gateway
     
     
