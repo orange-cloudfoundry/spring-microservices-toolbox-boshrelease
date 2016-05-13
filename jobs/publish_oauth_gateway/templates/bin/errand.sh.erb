@@ -21,7 +21,7 @@ cf target -s $CF_TARGET_SPACE
 cf push $CF_APP_NAME  -p /var/vcap/packages/oauth_gateway_pkg/oauthproxy.jar -i 2 --no-start --no-route
 
 #map the route on specified domain
-cf map-route CF_DOMAIN --hostname $CF_APP_NAME  
+cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME  
 
 
 #set cf env properties
