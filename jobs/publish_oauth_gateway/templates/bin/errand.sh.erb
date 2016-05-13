@@ -18,10 +18,13 @@ cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFA
 
 cf create-space $CF_TARGET_SPACE
 cf target -s $CF_TARGET_SPACE
-cf push $CF_APP_NAME  -p /var/vcap/packages/oauth_gateway_pkg/oauthproxy.jar -i 2 --no-start
+cf push $CF_APP_NAME  -p /var/vcap/packages/oauth_gateway_pkg/oauthproxy.jar -i 2 --no-start --no-route
+
+#map the route on specified domain
+cf map-route CF_DOMAIN --hostname $CF_APP_NAME  
 
 
-
+#set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:///dev/urandom"
 
 cf set-env $CF_APP_NAME ssoServiceUrl <%= p('oauth_gateway.ssoServiceUrl') %>
@@ -29,6 +32,7 @@ cf set-env $CF_APP_NAME clientId <%= p('oauth_gateway.clientId') %>
 cf set-env $CF_APP_NAME clientSecret <%= p('oauth_gateway.clientSecret') %>
 cf set-env $CF_APP_NAME backend_url <%= p('oauth_gateway.backend_url') %>
 
+#start cf app
 cf start $CF_APP_NAME
 cf restage $CF_APP_NAME
 
