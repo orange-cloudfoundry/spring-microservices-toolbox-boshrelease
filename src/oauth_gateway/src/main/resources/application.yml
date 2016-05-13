@@ -11,15 +11,15 @@ management:
 spring:
   application:
     name: oauth-proxy
+    
 
-endpoints:
-  restart:
-    enabled: true
-
+#endpoints:
+#  restart:
+#    enabled: true
 
 security:
-  #ignored: /favicon.ico, /
-  ignored: /favicon.ico
+  ignored: /favicon.ico, /
+  #ignored: /favicon.ico
   basic:
     enabled: false
   user:
@@ -29,12 +29,18 @@ security:
 #https://spring.io/blog/2015/11/30/migrating-oauth2-apps-from-spring-boot-1-2-to-1-3    
   oauth2:
     client:
+      #client-authentication-scheme: header
       clientId: ${clientId}
       clientSecret: ${clientSecret}
       accessTokenUri: ${ssoServiceUrl}/oauth/token
       userAuthorizationUri: ${ssoServiceUrl}/oauth/authorize
+#      scope:
+#        - openid
+        
     resource:
-      userInfoUri: ${ssoServiceUrl}/me
+      userInfoUri: ${ssoServiceUrl}/me  #/userinfo
+      jwt:
+        key-uri: ${ssoServiceUrl}/token_key #https://uaa.<your_domains>/token_key
 
 zuul:
   routes:

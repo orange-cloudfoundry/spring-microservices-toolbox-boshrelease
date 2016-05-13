@@ -30,6 +30,15 @@ import org.springframework.web.util.WebUtils;
 public class OauthProxyApplication extends WebSecurityConfigurerAdapter  {
 
 	public static void main(String[] args) {
+		
+		
+		//can skip ssl validation.
+		//get from https://github.com/pivotal-cf/identity-sample-apps/tree/master/authcode/src/main/java/org/cloudfoundry/identity/samples/authcode
+		if ("true".equals(System.getenv("SKIP_SSL_VALIDATION"))) {
+			SSLValidationDisabler.disableSSLValidation();
+		}
+
+		
 		SpringApplication.run(OauthProxyApplication.class, args);
 	}
 	
@@ -56,7 +65,7 @@ public class OauthProxyApplication extends WebSecurityConfigurerAdapter  {
 	
 	
 	
-	  private Filter csrfHeaderFilter() {
+	private Filter csrfHeaderFilter() {
 	        return new OncePerRequestFilter() {
 	            @Override
 	            protected void doFilterInternal(HttpServletRequest request,
