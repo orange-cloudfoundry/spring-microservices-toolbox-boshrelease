@@ -10,8 +10,10 @@ templates:
   bin/errand.sh.erb: bin/errand.sh
 
 properties:
-  oauth_gateway.ssoServiceUrl:
-    description: oauth service url  
+  oauth_gateway.loginServiceUrl:
+    description: login oauth service url
+  oauth_gateway.uaaServiceUrl:
+    description: uaa oauth service url
   oauth_gateway.clientId:
     description: oauth client id  
   oauth_gateway.clientSecret:

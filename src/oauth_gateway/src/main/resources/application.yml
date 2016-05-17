@@ -32,15 +32,15 @@ security:
       #client-authentication-scheme: header
       clientId: ${clientId}
       clientSecret: ${clientSecret}
-      accessTokenUri: ${ssoServiceUrl}/oauth/token
-      userAuthorizationUri: ${ssoServiceUrl}/oauth/authorize
+      accessTokenUri: ${loginServiceUrl}/oauth/token
+      userAuthorizationUri: ${loginServiceUrl}/oauth/authorize
       scope: {openid}
       
         
     resource:
-      userInfoUri: ${ssoServiceUrl}/userinfo #me
+      userInfoUri: ${uaaServiceUrl}/userinfo #me
       jwt:
-        key-uri: ${ssoServiceUrl}/token_key #https://uaa.<your_domains>/token_key
+        key-uri: ${uaaServiceUrl}/token_key #https://uaa.<your_domains>/token_key
 
 zuul:
   routes:
