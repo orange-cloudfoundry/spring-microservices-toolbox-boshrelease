@@ -32,6 +32,8 @@ cf set-env $CF_APP_NAME clientId <%= p('oauth_gateway.clientId') %>
 cf set-env $CF_APP_NAME clientSecret <%= p('oauth_gateway.clientSecret') %>
 cf set-env $CF_APP_NAME backend_url <%= p('oauth_gateway.backend_url') %>
 
+cf set-env $CF_APP_NAME SKIP_SSL_VALIDATION true
+
 #start cf app
 cf start $CF_APP_NAME
 cf restage $CF_APP_NAME
