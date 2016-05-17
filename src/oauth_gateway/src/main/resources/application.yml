@@ -34,8 +34,8 @@ security:
       clientSecret: ${clientSecret}
       accessTokenUri: ${ssoServiceUrl}/oauth/token
       userAuthorizationUri: ${ssoServiceUrl}/oauth/authorize
-#      scope:
-#        - openid
+      scope: {openid}
+      
         
     resource:
       userInfoUri: ${ssoServiceUrl}/me  #/userinfo
