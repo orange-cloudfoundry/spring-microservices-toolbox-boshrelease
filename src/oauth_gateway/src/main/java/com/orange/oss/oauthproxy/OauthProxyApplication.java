@@ -45,10 +45,9 @@ public class OauthProxyApplication extends WebSecurityConfigurerAdapter  {
 	
 	@Override
 	  public void configure(HttpSecurity http) throws Exception {
-	    http.antMatcher("/**")
-	      .authorizeRequests()
-	        .antMatchers("/index.html", "/home.html", "/").permitAll()
-	        .anyRequest().authenticated()
+	    http.authorizeRequests()
+	    	.anyRequest()
+	    	.authenticated()
 	      .and().csrf()
 	        .csrfTokenRepository(csrfTokenRepository())
 	      .and()
