@@ -38,7 +38,7 @@ security:
       
         
     resource:
-      userInfoUri: ${ssoServiceUrl}/me  #/userinfo
+      userInfoUri: ${ssoServiceUrl}/userinfo #me
       jwt:
         key-uri: ${ssoServiceUrl}/token_key #https://uaa.<your_domains>/token_key
 
