@@ -12,8 +12,10 @@ templates:
   config/application.yml.erb: config/application.yml
   config/logback.xml.erb: config/logback.xml
 properties:
-  oauth_gateway.ssoServiceUrl:
-    description: oauth service url  
+  oauth_gateway.loginServiceUrl:
+    description: oauth Login service url  
+  oauth_gateway.uaaServiceUrl:
+    description: oauth UAA  service url  
   oauth_gateway.clientId:
     description: oauth client id  
   oauth_gateway.clientSecret:

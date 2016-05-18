@@ -16,7 +16,9 @@ endpoints:
   restart:
     enabled: true
 
-ssoServiceUrl: <%= p('oauth_gateway.ssoServiceUrl') %>
+
+loginServiceUrl: <%= p('oauth_gateway.loginServiceUrl') %>
+uaaServiceUrl: <%= p('oauth_gateway.uaaServiceUrl') %>
 clientId: <%= p('oauth_gateway.clientId') %>
 clientSecret: <%= p('oauth_gateway.clientSecret') %>
 backend_url: <%= p('oauth_gateway.backend_url') %>
@@ -36,10 +38,10 @@ security:
     client:
       clientId: ${clientId}
       clientSecret: ${clientSecret}
-      accessTokenUri: ${ssoServiceUrl}/oauth/token
-      userAuthorizationUri: ${ssoServiceUrl}/oauth/authorize
+      accessTokenUri: ${loginServiceUrl}/oauth/token
+      userAuthorizationUri: ${loginServiceUrl}/oauth/authorize
     resource:
-      userInfoUri: ${ssoServiceUrl}/me
+      userInfoUri: ${uaaServiceUrl}/me
 
 
 zuul:
