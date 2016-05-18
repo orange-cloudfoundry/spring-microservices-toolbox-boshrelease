@@ -34,13 +34,16 @@ security:
       clientSecret: ${clientSecret}
       accessTokenUri: ${loginServiceUrl}/oauth/token
       userAuthorizationUri: ${loginServiceUrl}/oauth/authorize
-      scope: {openid}
+      scope:
+        - openid
       
         
     resource:
       userInfoUri: ${uaaServiceUrl}/userinfo #me
+      id: openid
       jwt:
         #key-uri: ${uaaServiceUrl}/token_key #https://uaa.<your_domains>/token_key
+        
         key-value: |
           -----BEGIN PUBLIC KEY-----
           MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2ba4+6dV+B5+uXxZC1pF
