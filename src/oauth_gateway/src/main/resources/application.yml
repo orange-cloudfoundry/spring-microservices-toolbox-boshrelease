@@ -11,11 +11,6 @@ management:
 spring:
   application:
     name: oauth-proxy
-    
-
-#endpoints:
-#  restart:
-#    enabled: true
 
 security:
   ignored: /favicon.ico, /
@@ -44,26 +39,15 @@ security:
       jwt:
 #        key-uri: ${uaaServiceUrl}/token_key #https://uaa.<your_domains>/token_key
         key-value: ${jwtKeyValue}
-        
-#        key-value:  |
-#          -----BEGIN PUBLIC KEY-----
-#          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2ba4+6dV+B5+uXxZC1pF
-#          sshg8j2Aq7ywGr66HkmRCizcwztGgvoJjo6eCnIXElL9kVXxVV0dPP3iiGEgC74K
-#          33b5bFONJ3BMOI8Bvr9CSutql6tuu9PM1td0NTD8/+uNWliTdiXleX5tJwaO0xJH
-#          NsWEHDLKa6B5mBrzKllb9BCNZVu86R53QN+RncAhitaPxsp0iuff2d7HmJXCmBB7
-#          PRF2UPri7q/19Z61DX6xZl1q+WssrI/Zn+HYeZX2qqeaVyQCX2IaUJNjabgBs7QJ
-#          ZoYTjqz4Dw71Q2r+UyMWqaVOKKkX5PjOcT8IDjelOXOa3gQG+JvtKM5iKPY8p8Lp
-#          nQIDAQAB
-#          -----END PUBLIC KEY----- 
 
 zuul:
   routes:
     resources:
-      path: /resources/**
+      path: ${path}
       url: ${backend_url}
 
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: INFO
 
 

@@ -15,7 +15,10 @@ properties:
   oauth_gateway.clientId:
     description: oauth client id  
   oauth_gateway.clientSecret:
-    description: oauth client secret   
+    description: oauth client secret
+  oauth_gateway.path:
+    description: proxy context root
+    example: /**
   oauth_gateway.backend_url:
     description: protected backend url
   oauth_gateway.jwtKeyValue:
