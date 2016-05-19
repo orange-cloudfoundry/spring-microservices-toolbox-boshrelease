@@ -18,7 +18,8 @@ properties:
     description: oauth client secret   
   oauth_gateway.backend_url:
     description: protected backend url
-        
+  oauth_gateway.jwtKeyValue:
+    description: public key for jwt token
   cf.api_url:
     description: 'Full URL of Cloud Foundry API'
     example: 'https://api.your-domain.example.com'
