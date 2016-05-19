@@ -1,0 +1,34 @@
+---
+packages:
+- name: openjdk
+  version: 93c072891062f43e6a7fad1f3232064da90429af
+  fingerprint: 93c072891062f43e6a7fad1f3232064da90429af
+  sha1: 2e372f19439e5426f0f8ab2377653b886ba2117a
+  dependencies: []
+- name: oauth_gateway_pkg
+  version: 6503d583b8ad6054d6d0d873439f1c8f5593665b
+  fingerprint: 6503d583b8ad6054d6d0d873439f1c8f5593665b
+  sha1: 7a5da41335d8b4f54db665885bfb56b5d9a7f692
+  dependencies: []
+- name: cli
+  version: 0f19a1df7ef777208cc3bfcdc875b2b56613ab40
+  fingerprint: 0f19a1df7ef777208cc3bfcdc875b2b56613ab40
+  sha1: b0a9fe89ca8e1129a0054b19b35f0ba936ac4d93
+  dependencies: []
+jobs:
+- name: oauth_gateway
+  version: b0df44f27b9b2d3126dd909faa2edaa2a85040b4
+  fingerprint: b0df44f27b9b2d3126dd909faa2edaa2a85040b4
+  sha1: d0e33d30e5383312e6c6785b9f061c1d5c1f2f7b
+- name: publish_oauth_gateway
+  version: a11be6a023d28f2a9097fed2e80eb26baa4ce1d3
+  fingerprint: a11be6a023d28f2a9097fed2e80eb26baa4ce1d3
+  sha1: 067ae3ed3ab6798517eaa0a93bc0c3f95a844255
+license:
+  version: 8ca608bd3578ee17c21ec68853509d039dc27d74
+  fingerprint: 8ca608bd3578ee17c21ec68853509d039dc27d74
+  sha1: 63f7806d589940929599339f8407b5de9966678d
+commit_hash: 47773c62
+uncommitted_changes: true
+name: spring-microservices-toolbox
+version: '1'
