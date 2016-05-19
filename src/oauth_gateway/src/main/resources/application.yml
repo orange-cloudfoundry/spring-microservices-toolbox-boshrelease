@@ -43,7 +43,7 @@ security:
 zuul:
   routes:
     resources:
-      path: ${path}
+      path: ${gatewayPath}
       url: ${backend_url}
 
 logging:

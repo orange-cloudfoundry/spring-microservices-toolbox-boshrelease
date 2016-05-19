@@ -16,7 +16,7 @@ properties:
     description: oauth client id  
   oauth_gateway.clientSecret:
     description: oauth client secret
-  oauth_gateway.path:
+  oauth_gateway.gatewayPath:
     description: proxy context root
     example: /**
   oauth_gateway.backend_url:
