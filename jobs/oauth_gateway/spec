@@ -19,4 +19,7 @@ properties:
   oauth_gateway.clientSecret:
     description: oauth client secret   
   oauth_gateway.backend_url:
-    description: protected backend url  
+    description: protected backend url
+  oauth_gateway.jwtKeyValue:
+    description: public key for jwt token
+      
