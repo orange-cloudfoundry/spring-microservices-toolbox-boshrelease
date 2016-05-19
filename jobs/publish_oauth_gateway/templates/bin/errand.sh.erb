@@ -31,7 +31,7 @@ cf set-env $CF_APP_NAME loginServiceUrl <%= p('oauth_gateway.loginServiceUrl') %
 
 cf set-env $CF_APP_NAME clientId <%= p('oauth_gateway.clientId') %>
 cf set-env $CF_APP_NAME clientSecret <%= p('oauth_gateway.clientSecret') %>
-cf set-env $CF_APP_NAME gatewayPath <%= p('oauth_gateway.gatewayPath') %>
+cf set-env $CF_APP_NAME gatewayPath "<%= p('oauth_gateway.gatewayPath') %>"
 cf set-env $CF_APP_NAME backend_url <%= p('oauth_gateway.backend_url') %>
 cf set-env $CF_APP_NAME jwtKeyValue "<%= p('oauth_gateway.jwtKeyValue').gsub('\\n', '')  %>"
 
