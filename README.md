@@ -1,5 +1,31 @@
 # BOSH Release for spring-microservices-toolbox
 
+
+
+
+## Purpose
+
+The purpose of this bosh release is to offer some preconfigured Spring Cloud components, for use in Bosh / Cloudfoundry operations.
+http://projects.spring.io/spring-cloud/
+
+The idea is to ease bosh ops activities, providing them usefull features of Spring Cloud / Spring Cloud Foundry, in a bosh standard way (manifest, errand, etc ..)
+
+
+### Oauth Gateway Errand
+
+Create a space, route and cf application to offer a secure Oauth2 front end to an internal bosh deployment backend.
+prerequisite:
+* a Oauth Client Id, with scope=openid (configured with uaa, or from cloudfoundry UAA manifest)
+* org admin privileged, to create the space and route
+
+Leverages:
+* Spring Cloud Zuul, http://cloud.spring.io/spring-cloud-netflix/
+* Spring Cloud Security, enabling UAA Oauth login, http://cloud.spring.io/spring-cloud-security/
+
+
+
+
+
 ## Usage
 
 To use this bosh release, first upload it to your bosh:
