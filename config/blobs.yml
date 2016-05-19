@@ -1,1 +1,9 @@
---- {}
+---
+openjdk/openjdk.tar.gz:
+  object_id: 638d7f43-8065-4cfc-8c27-d8ecdedb172d
+  sha: 9fc65908420c92047346e5bcc66fee0aad422c5e
+  size: 126476497
+cli/cli-linux-amd64-6.17.0.tgz:
+  object_id: cdd078c2-4b5f-4c95-99d7-c62815812199
+  sha: c552c8f4436a63c2034d47f66fd218426c632112
+  size: 6153376
