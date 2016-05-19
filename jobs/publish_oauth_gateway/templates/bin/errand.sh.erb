@@ -28,8 +28,6 @@ cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
 
 cf set-env $CF_APP_NAME loginServiceUrl <%= p('oauth_gateway.loginServiceUrl') %>
-cf set-env $CF_APP_NAME uaaServiceUrl <%= p('oauth_gateway.uaaServiceUrl') %>
-
 
 cf set-env $CF_APP_NAME clientId <%= p('oauth_gateway.clientId') %>
 cf set-env $CF_APP_NAME clientSecret <%= p('oauth_gateway.clientSecret') %>

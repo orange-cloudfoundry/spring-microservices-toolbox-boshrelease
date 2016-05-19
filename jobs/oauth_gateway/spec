@@ -14,8 +14,6 @@ templates:
 properties:
   oauth_gateway.loginServiceUrl:
     description: oauth Login service url  
-  oauth_gateway.uaaServiceUrl:
-    description: oauth UAA  service url  
   oauth_gateway.clientId:
     description: oauth client id  
   oauth_gateway.clientSecret:

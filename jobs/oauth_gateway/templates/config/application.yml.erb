@@ -12,13 +12,12 @@ spring:
   application:
     name: oauth-proxy
 
-endpoints:
-  restart:
-    enabled: true
+#endpoints:
+#  restart:
+#    enabled: true
 
 
 loginServiceUrl: <%= p('oauth_gateway.loginServiceUrl') %>
-uaaServiceUrl: <%= p('oauth_gateway.uaaServiceUrl') %>
 clientId: <%= p('oauth_gateway.clientId') %>
 clientSecret: <%= p('oauth_gateway.clientSecret') %>
 backend_url: <%= p('oauth_gateway.backend_url') %>
@@ -40,8 +39,16 @@ security:
       clientSecret: ${clientSecret}
       accessTokenUri: ${loginServiceUrl}/oauth/token
       userAuthorizationUri: ${loginServiceUrl}/oauth/authorize
+      scope:
+        - openid
+       
     resource:
-      userInfoUri: ${uaaServiceUrl}/me
+
+      userInfoUri: ${loginServiceUrl}/userinfo
+      id: openid
+      jwt:
+        key-uri: ${loginServiceUrl}/token_key #https://uaa.<your_domains>/token_key
+
 
 
 zuul:
@@ -49,11 +56,6 @@ zuul:
     resources:
       path: /resources/**
       url: ${backend_url}
-      
-
-#eureka:
-#  client:
-#    enabled: false
 
 logging:
   level:

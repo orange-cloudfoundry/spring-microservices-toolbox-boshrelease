@@ -39,10 +39,10 @@ security:
       
         
     resource:
-      userInfoUri: ${uaaServiceUrl}/userinfo #me
+      userInfoUri: ${loginServiceUrl}/userinfo #me
       id: openid
       jwt:
-        #key-uri: ${uaaServiceUrl}/token_key #https://uaa.<your_domains>/token_key
+#        key-uri: ${uaaServiceUrl}/token_key #https://uaa.<your_domains>/token_key
         
         key-value: |
           -----BEGIN PUBLIC KEY-----
@@ -54,6 +54,17 @@ security:
           ZoYTjqz4Dw71Q2r+UyMWqaVOKKkX5PjOcT8IDjelOXOa3gQG+JvtKM5iKPY8p8Lp
           nQIDAQAB
           -----END PUBLIC KEY----- 
+zuul:
+  routes:
+    resources:
+      path: /resources/**
+      url: ${backend_url}
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+
 
 zuul:
   routes:
