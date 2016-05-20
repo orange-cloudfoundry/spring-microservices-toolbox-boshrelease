@@ -14,6 +14,7 @@ The idea is to ease bosh ops activities, providing them usefull features of Spri
 ### Oauth Gateway Errand
 
 Create a space, route and cf application to offer a secure Oauth2 front end to an internal bosh deployment backend.
+
 prerequisite:
 * a Oauth Client Id, with scope=openid (configured with uaa, or from cloudfoundry UAA manifest)
 * org admin privileged, to create the space and route
@@ -23,6 +24,17 @@ Leverages:
 * Spring Cloud Security, enabling UAA Oauth login, http://cloud.spring.io/spring-cloud-security/
 
 
+
+### Spring Cloud Sleuth Zipkin
+
+https://gitlab.com/dsyer/spring-cloud-sleuth/tree/master/spring-cloud-sleuth-zipkin-stream
+https://spring.io/blog/2016/02/15/distributed-tracing-with-spring-cloud-sleuth-and-spring-cloud-zipkin
+https://programmaticponderings.wordpress.com/2016/02/15/diving-deeper-into-getting-started-with-spring-cloud/
+
+
+prerequisite:
+* a cloudfoundry org admin account
+* marketplace with mysql and rabbitmq services
 
 
 
