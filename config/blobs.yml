@@ -7,3 +7,7 @@ cli/cli-linux-amd64-6.17.0.tgz:
   object_id: cdd078c2-4b5f-4c95-99d7-c62815812199
   sha: c552c8f4436a63c2034d47f66fd218426c632112
   size: 6153376
+zipkin-web-all/zipkin-web-1.40.1-all.jar:
+  object_id: d3262848-d6b2-4a0b-9067-aa103b3603f2
+  sha: b01896cd87066ab61f572366ffb1944b58b2b18c
+  size: 32350271
