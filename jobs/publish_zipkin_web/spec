@@ -32,3 +32,6 @@ properties:
     description: cf app name to push. will also be the hostname on cf.domain
   cf.domain:
     description: domain name to expose the cf app
+  zipkin.serverUrl:
+    description: url to zipkin server
+    example: zipkin-server.cfapps.io:80

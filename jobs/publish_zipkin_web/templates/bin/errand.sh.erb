@@ -14,6 +14,10 @@ CF_TARGET_SPACE='<%= p("cf.target_space") %>'
 CF_APP_NAME='<%= p("cf.appname") %>'
 CF_DOMAIN='<%= p("cf.domain") %>'
 
+
+
+ZIPKIN_SERVER_URL='<%= p("zipkin.serverUrl") %>'
+
 cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFAULT_SPACE --skip-ssl-validation
 
 cf create-space $CF_TARGET_SPACE
@@ -27,6 +31,7 @@ cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME
 #set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
 
+cf set-env zipkin-web JBP_CONFIG_JAVA_MAIN '{arguments: "-zipkin.web.port=:\$PORT -zipkin.web.rootUrl=/ -zipkin.web.query.dest=$ZIPKIN_SERVER_URL -zipkin.web.resourcesRoot=."}'
 
 #start cf app
 cf start $CF_APP_NAME
