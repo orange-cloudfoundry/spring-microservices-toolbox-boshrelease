@@ -1,0 +1,7 @@
+---
+name: zipkin-web-all-pkg
+dependencies: []
+files:
+- zipkin-web-all/**/*
+- openjdk/*
+- common/setup-java-prepackaging.sh
