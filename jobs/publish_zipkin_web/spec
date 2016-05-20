@@ -1,5 +1,5 @@
 ---
-name: publish_oauth_gateway
+name: publish_zipkin_web
 packages:
 - zipkin-web-all-pkg
 - cli
