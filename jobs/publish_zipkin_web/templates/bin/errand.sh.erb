@@ -22,7 +22,7 @@ cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFA
 
 cf create-space $CF_TARGET_SPACE
 cf target -s $CF_TARGET_SPACE
-cf push $CF_APP_NAME  -p /var/vcap/packages/zipkin-web-all-pkg/zipkin-web-1.40.1-all.jar -i 2 --no-start --no-route -t 120
+cf push $CF_APP_NAME  -p /var/vcap/packages/zipkin-web-all-pkg/zipkin-web-1.40.1-all.jar -b java_buildpack -i 1 --no-start --no-route -t 120
 
 #map the route on specified domain
 cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME  
@@ -31,7 +31,7 @@ cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME
 #set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
 
-cf set-env zipkin-web JBP_CONFIG_JAVA_MAIN '{arguments: "-zipkin.web.port=:\$PORT -zipkin.web.rootUrl=/ -zipkin.web.query.dest=$ZIPKIN_SERVER_URL -zipkin.web.resourcesRoot=."}'
+cf set-env zipkin-web JBP_CONFIG_JAVA_MAIN '{arguments: "-zipkin.web.port=:\$PORT -zipkin.web.rootUrl=/ -zipkin.web.query.dest=<%= p("zipkin.serverUrl") %> -zipkin.web.resourcesRoot=."}'
 
 #start cf app
 cf start $CF_APP_NAME
