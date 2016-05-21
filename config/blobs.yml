@@ -11,3 +11,7 @@ zipkin-web-all/zipkin-web-1.40.1-all.jar:
   object_id: d3262848-d6b2-4a0b-9067-aa103b3603f2
   sha: b01896cd87066ab61f572366ffb1944b58b2b18c
   size: 32350271
+zipkin-web-all/zipkin-web-1.34.0-all.jar:
+  object_id: 6eb72ff4-a802-4011-96cf-3f0ce5701be0
+  sha: 0867b260de4d31fab6d5a4ec18899f482a873583
+  size: 33240558
