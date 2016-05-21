@@ -27,9 +27,13 @@ Leverages:
 
 ### Spring Cloud Sleuth Zipkin
 
-https://gitlab.com/dsyer/spring-cloud-sleuth/tree/master/spring-cloud-sleuth-zipkin-stream
-https://spring.io/blog/2016/02/15/distributed-tracing-with-spring-cloud-sleuth-and-spring-cloud-zipkin
-https://programmaticponderings.wordpress.com/2016/02/15/diving-deeper-into-getting-started-with-spring-cloud/
+
+
+usefull links:
+* https://dzone.com/articles/distributed-tracing-with-spring-cloud-sleuth-and-s
+* https://gitlab.com/dsyer/spring-cloud-sleuth/tree/master/spring-cloud-sleuth-zipkin-stream
+* https://spring.io/blog/2016/02/15/distributed-tracing-with-spring-cloud-sleuth-and-spring-cloud-zipkin
+* https://programmaticponderings.wordpress.com/2016/02/15/diving-deeper-into-getting-started-with-spring-cloud/
 
 
 prerequisite:
