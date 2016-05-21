@@ -10,4 +10,5 @@ cp target/*.jar  ${BUILD_DIR}
 
 cd ${BUILD_DIR}
 rm -rf zipkin-server
+cleanup_java
 
