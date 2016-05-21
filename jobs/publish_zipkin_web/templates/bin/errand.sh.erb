@@ -31,7 +31,7 @@ cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME
 #set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
 
-cf set-env zipkin-web JBP_CONFIG_JAVA_MAIN '{arguments: "-zipkin.web.port=:\$PORT -zipkin.web.rootUrl=/ -zipkin.web.query.dest=<%= p("zipkin.serverUrl") %> -zipkin.web.resourcesRoot=."}'
+cf set-env zipkin-web JBP_CONFIG_JAVA_MAIN '{arguments: "-zipkin.web.port=:$PORT -zipkin.web.query.dest=<%= p("zipkin.serverUrl") %> "}'
 
 #start cf app
 cf start $CF_APP_NAME
