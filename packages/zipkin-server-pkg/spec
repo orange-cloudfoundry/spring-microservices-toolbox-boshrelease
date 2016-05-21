@@ -3,3 +3,4 @@ name: zipkin-server-pkg
 dependencies: []
 files:
 - zipkin-server/**/*
+- common/setup-java-prepackaging.sh
