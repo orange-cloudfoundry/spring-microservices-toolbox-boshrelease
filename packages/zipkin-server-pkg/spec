@@ -1,0 +1,5 @@
+---
+name: zipkin-server-pkg
+dependencies: []
+files:
+- zipkin-server/**/*
