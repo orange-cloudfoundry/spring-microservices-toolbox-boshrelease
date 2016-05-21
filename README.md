@@ -2,7 +2,6 @@
 
 
 
-
 ## Purpose
 
 The purpose of this bosh release is to offer some preconfigured Spring Cloud components, for use in Bosh / Cloudfoundry operations.
@@ -27,19 +26,19 @@ Leverages:
 
 ### Spring Cloud Sleuth Zipkin
 
-
-
 usefull links:
 * https://dzone.com/articles/distributed-tracing-with-spring-cloud-sleuth-and-s
 * https://gitlab.com/dsyer/spring-cloud-sleuth/tree/master/spring-cloud-sleuth-zipkin-stream
 * https://spring.io/blog/2016/02/15/distributed-tracing-with-spring-cloud-sleuth-and-spring-cloud-zipkin
 * https://programmaticponderings.wordpress.com/2016/02/15/diving-deeper-into-getting-started-with-spring-cloud/
 
+This release provides 2 bosh errands, pushing cf application for :
+* zipkin-server. http collect endpoint for spring cloud sleuth instrumented apps, must be bound to a mysql cf service.
+* zipkin-ui. interface to analyse the spans etc .. Must be configured to targer zipkin-server
 
 prerequisite:
 * a cloudfoundry org admin account
-* marketplace with mysql and rabbitmq services
-
+* marketplace with mysql for zipkin server
 
 
 ## Usage
