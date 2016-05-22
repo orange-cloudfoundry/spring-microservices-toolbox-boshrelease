@@ -1,0 +1,7 @@
+---
+name: dataflow-server-pkg
+dependencies: []
+files:
+- spring-cloud-dataflow/**/*
+- openjdk/*
+- common/setup-java-prepackaging.sh
