@@ -34,11 +34,25 @@ usefull links:
 
 This release provides 2 bosh errands, pushing cf application for :
 * zipkin-server. http collect endpoint for spring cloud sleuth instrumented apps, must be bound to a mysql cf service.
-* zipkin-ui. interface to analyse the spans etc .. Must be configured to targer zipkin-server
+* zipkin-ui. interface to analyse the spans etc .. Must be configured to target zipkin-server
 
 prerequisite:
 * a cloudfoundry org admin account
 * marketplace with mysql for zipkin server
+
+
+### Spring Cloud Dataflow for Cloudfoundry
+
+
+
+usefull links: 
+* http://docs.spring.io/spring-cloud-dataflow/docs/current-SNAPSHOT/reference/htmlsingle/#dashboard-introduction
+
+
+prerequisite:
+* a cloudfoundry org admin account
+* marketplace with mysql for spring cloud dataflow server
+
 
 
 ## Usage
