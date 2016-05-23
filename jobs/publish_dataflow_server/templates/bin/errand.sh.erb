@@ -2,7 +2,7 @@
 set -e
 export PATH=$PATH:/var/vcap/packages/cli
 
-
+#where to deploy the cf apps
 CF_API_URL='<%= p("cf.api_url") %>'
 CF_USERNAME='<%= p("cf.username") %>'
 CF_PASSWORD='<%= p("cf.password") %>'
@@ -13,6 +13,15 @@ CF_TARGET_SPACE='<%= p("cf.target_space") %>'
 
 CF_APP_NAME='<%= p("cf.appname") %>'
 CF_DOMAIN='<%= p("cf.domain") %>'
+
+
+#cf app props
+DATAFLOW_CF_API_URL='<%= p("cf.api_url") %>'
+DATAFLOW_CF_USERNAME='<%= p("cf.username") %>'
+DATAFLOW_CF_PASSWORD='<%= p("cf.password") %>'
+DATAFLOW_CF_ORG='<%= p("cf.org") %>'
+DATAFLOW_CF_TARGET_SPACE='<%= p("cf.target_space") %>'
+DATAFLOW_CF_DOMAIN='<%= p("cf.domain") %>'
 
 
 cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFAULT_SPACE --skip-ssl-validation
@@ -27,6 +36,21 @@ cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME
 
 #set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
+
+
+# the root domain to use when mapping routes
+#SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: .redacted-domain
+# Comma separated set of service instance names to bind to the deployed app
+#SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SERVICES: dataflow-rabbit,dataflow-mysql
+
+cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_API_ENDPOINT $DATAFLOW_CF_API_URL 
+cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_USERNAME $DATAFLOW_CF_USERNAME
+cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_PASSWORD $DATAFLOW_CF_PASSWORD
+cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORGANIZATION $DATAFLOW_CF_ORG
+cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE $DATAFLOW_CF_TARGET_SPACE
+cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN $DATAFLOW_CF_DOMAIN
+cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION true
+
 
 #start cf app
 cf start $CF_APP_NAME
