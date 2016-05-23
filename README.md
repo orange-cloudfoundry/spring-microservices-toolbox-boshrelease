@@ -47,6 +47,7 @@ prerequisite:
 
 usefull links: 
 * http://docs.spring.io/spring-cloud-dataflow/docs/current-SNAPSHOT/reference/htmlsingle/#dashboard-introduction
+* https://spring.io/blog/2016/04/05/1-stream-2-applications-and-3-dependencies-for-spring-cloud-data-flow
 
 
 prerequisite:
