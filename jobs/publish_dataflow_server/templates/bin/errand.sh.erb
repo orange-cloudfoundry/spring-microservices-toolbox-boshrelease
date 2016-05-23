@@ -52,6 +52,13 @@ cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN $DATAFLOW_CF_D
 cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION true
 
 
+cf set-env dataflow-server SECURITY_BASIC_ENABLED false
+
+#todo template basic oauth or use Oauth2 login
+cf set-env dataflow-server SECURITY_USER_NAME admin
+cf set-env dataflow-server SECURITY_USER_PASSWORD xxxxx
+
+
 #start cf app
 cf start $CF_APP_NAME
 cf restage $CF_APP_NAME
