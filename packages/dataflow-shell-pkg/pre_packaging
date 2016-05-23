@@ -6,7 +6,7 @@ set -x
 
 cd ${BUILD_DIR}/spring-cloud-dataflow-shell
 ./mvnw clean install -DskipTests=true
-cp target/*.jar  ${BUILD_DIR}
+cp target/spring-cloud-dataflow-shell-0.0.1-SNAPSHOT.jar  ${BUILD_DIR}
 
 cd ${BUILD_DIR}
 rm -rf spring-cloud-dataflow-shell

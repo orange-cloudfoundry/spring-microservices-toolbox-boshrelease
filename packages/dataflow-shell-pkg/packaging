@@ -8,5 +8,5 @@ CPUS=$(grep -c ^processor /proc/cpuinfo)
 # $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
 export HOME=/var/vcap
 
-cp -r ${BOSH_COMPILE_TARGET}/dataflow-shell-0.0.1-SNAPSHOT.jar  ${BOSH_INSTALL_TARGET}/spring-cloud-dataflow-shell.jar
+cp -r ${BOSH_COMPILE_TARGET}/spring-cloud-dataflow-shell-0.0.1-SNAPSHOT.jar  ${BOSH_INSTALL_TARGET}/spring-cloud-dataflow-shell.jar
 

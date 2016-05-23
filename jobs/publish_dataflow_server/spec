@@ -2,13 +2,15 @@
 name: publish_dataflow_server
 packages:
 - dataflow-server-pkg
+- dataflow-shell-pkg
 - cli
+- openjdk
 templates:
   bin/run: bin/run
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   bin/errand.sh.erb: bin/errand.sh
-  bin/data-flow-shell.sh.erb: bin/data-flow-shell.sh
+  bin/dataflow-shell.sh.erb: bin/dataflow-shell.sh
 
 properties:
   cf.api_url:
