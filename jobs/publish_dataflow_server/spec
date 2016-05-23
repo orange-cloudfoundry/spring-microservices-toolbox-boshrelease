@@ -8,6 +8,7 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   bin/errand.sh.erb: bin/errand.sh
+  bin/data-flow-shell.sh.erb: bin/data-flow-shell.sh
 
 properties:
   cf.api_url:
