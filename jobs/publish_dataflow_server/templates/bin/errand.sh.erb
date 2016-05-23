@@ -19,7 +19,7 @@ cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFA
 
 cf create-space $CF_TARGET_SPACE
 cf target -s $CF_TARGET_SPACE
-cf push $CF_APP_NAME  -p /var/vcap/packages/zipkin-server-pkg/zipkin-server.jar -b java_buildpack -i 1 --no-start --no-route -t 120
+cf push $CF_APP_NAME  -p /var/vcap/packages/dataflow-server-pkg/spring-cloud-dataflow.jar -b java_buildpack -i 1 --no-start --no-route -t 120
 
 #map the route on specified domain
 cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME  
