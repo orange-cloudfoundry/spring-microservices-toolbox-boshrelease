@@ -1,0 +1,66 @@
+---
+packages:
+- name: openjdk
+  version: 93c072891062f43e6a7fad1f3232064da90429af
+  fingerprint: 93c072891062f43e6a7fad1f3232064da90429af
+  sha1: 2e372f19439e5426f0f8ab2377653b886ba2117a
+  dependencies: []
+- name: oauth_gateway_pkg
+  version: f81abe37641a3b12fcc7b32e7b46e407bd8fee80
+  fingerprint: f81abe37641a3b12fcc7b32e7b46e407bd8fee80
+  sha1: d2faba76bd3086bc78a4504bfd6cc129fc6da974
+  dependencies: []
+- name: dataflow-server-pkg
+  version: 0ecbcc8249ae7e62ffb023415a6feb4fb6d78fe4
+  fingerprint: 0ecbcc8249ae7e62ffb023415a6feb4fb6d78fe4
+  sha1: 25033921266dc4c1b9f67b04a4cdccb9b7a338d2
+  dependencies: []
+- name: zipkin-server-pkg
+  version: c5dc5e334c23412b9ea75f8dc76bd39c57da4cae
+  fingerprint: c5dc5e334c23412b9ea75f8dc76bd39c57da4cae
+  sha1: ff82be47f5a6138aca96b76a8012410f5cd2ab62
+  dependencies: []
+- name: dataflow-shell-pkg
+  version: 76507b9bf17fff494fca142756c46060b2ea14d9
+  fingerprint: 76507b9bf17fff494fca142756c46060b2ea14d9
+  sha1: 3a01ffa4af39896ff4f46e17a7ae709806af5a0b
+  dependencies: []
+- name: zipkin-web-all-pkg
+  version: 4cc1c25653c3c35bc8f469c2e52c854bfd83065e
+  fingerprint: 4cc1c25653c3c35bc8f469c2e52c854bfd83065e
+  sha1: fd7b0435c0d9c191336b9238f3e0fabe3ee943ab
+  dependencies: []
+- name: cli
+  version: 0f19a1df7ef777208cc3bfcdc875b2b56613ab40
+  fingerprint: 0f19a1df7ef777208cc3bfcdc875b2b56613ab40
+  sha1: b0a9fe89ca8e1129a0054b19b35f0ba936ac4d93
+  dependencies: []
+jobs:
+- name: oauth_gateway
+  version: b0df44f27b9b2d3126dd909faa2edaa2a85040b4
+  fingerprint: b0df44f27b9b2d3126dd909faa2edaa2a85040b4
+  sha1: d0e33d30e5383312e6c6785b9f061c1d5c1f2f7b
+- name: publish_zipkin_server
+  version: 1c6eea0143a2552b2393b0235673a5202972d4e6
+  fingerprint: 1c6eea0143a2552b2393b0235673a5202972d4e6
+  sha1: 0cb2e1105c8fc5ac913786a04aca7ccc8e4bb483
+- name: publish_zipkin_web
+  version: d150c6cd95af68de997323f74aa7f087696d2905
+  fingerprint: d150c6cd95af68de997323f74aa7f087696d2905
+  sha1: 6485287dfe39a5d412a61d38c94a65828faba128
+- name: publish_dataflow_server
+  version: c6e2bdfaf48efbac7ce86bf6bd76cf92e38a74c8
+  fingerprint: c6e2bdfaf48efbac7ce86bf6bd76cf92e38a74c8
+  sha1: ccaf27b49e94fc4d32c07691e303b62a8a690ebe
+- name: publish_oauth_gateway
+  version: 01dc197ea5e754778f94860ef8f45f929686e0b2
+  fingerprint: 01dc197ea5e754778f94860ef8f45f929686e0b2
+  sha1: 3f6b152811b3c538b396f83cb35f24740c585486
+license:
+  version: 8ca608bd3578ee17c21ec68853509d039dc27d74
+  fingerprint: 8ca608bd3578ee17c21ec68853509d039dc27d74
+  sha1: 63f7806d589940929599339f8407b5de9966678d
+commit_hash: 09931184
+uncommitted_changes: true
+name: spring-microservices-toolbox
+version: '4'
