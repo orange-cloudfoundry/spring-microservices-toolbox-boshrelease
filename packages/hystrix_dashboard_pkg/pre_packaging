@@ -1,0 +1,13 @@
+set -e
+set -u
+set -x
+
+. common/setup-java-prepackaging.sh
+
+cd ${BUILD_DIR}/hystrix-dashboard
+./mvnw clean install -DskipTests=true
+cp target/*.jar  ${BUILD_DIR}
+
+cd ${BUILD_DIR}
+rm -rf hystrix-dashboard
+

@@ -1,0 +1,39 @@
+#!/bin/bash
+set -e
+export PATH=$PATH:/var/vcap/packages/cli
+
+
+CF_API_URL='<%= p("cf.api_url") %>'
+CF_USERNAME='<%= p("cf.username") %>'
+CF_PASSWORD='<%= p("cf.password") %>'
+CF_ORG='<%= p("cf.org") %>'
+CF_DEFAULT_SPACE='<%= p("cf.default_space") %>'
+CF_TARGET_SPACE='<%= p("cf.target_space") %>'
+
+
+CF_APP_NAME='<%= p("cf.appname") %>'
+CF_DOMAIN='<%= p("cf.domain") %>'
+
+cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFAULT_SPACE --skip-ssl-validation
+
+cf create-space $CF_TARGET_SPACE
+cf target -s $CF_TARGET_SPACE
+cf push $CF_APP_NAME  -p /var/vcap/packages/hystrix_dashboard_pkg/hystrix-dashboard.jar -i 1 --no-start --no-route -t 120
+
+#map the route on specified domain
+cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME  
+
+
+#set cf env properties
+cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
+
+
+cf set-env $CF_APP_NAME loginServiceUrl <%= p('oauth_gateway.loginServiceUrl') %>
+
+
+cf set-env $CF_APP_NAME SKIP_SSL_VALIDATION true
+
+#start cf app
+cf start $CF_APP_NAME
+cf restage $CF_APP_NAME
+

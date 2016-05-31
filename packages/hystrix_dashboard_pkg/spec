@@ -1,0 +1,7 @@
+---
+name: oauth_gateway_pkg
+dependencies: []
+files:
+- hystrix-dashboard/**/*
+- openjdk/*
+- common/setup-java-prepackaging.sh
