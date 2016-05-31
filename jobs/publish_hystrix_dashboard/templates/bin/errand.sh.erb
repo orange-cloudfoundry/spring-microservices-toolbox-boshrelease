@@ -18,7 +18,7 @@ cf login -a $CF_API_URL  -u $CF_USERNAME -p $CF_PASSWORD  -o $CF_ORG -s $CF_DEFA
 
 cf create-space $CF_TARGET_SPACE
 cf target -s $CF_TARGET_SPACE
-cf push $CF_APP_NAME  -p /var/vcap/packages/hystrix_dashboard_pkg/hystrix-dashboard.jar -i 1 --no-start --no-route -t 120
+cf push $CF_APP_NAME  -p /var/vcap/packages/hystrix_dashboard_pkg/hystrix-dashboard.jar -i 1 --no-start --no-route -t 120 -b java_buildpack
 
 #map the route on specified domain
 cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME  
@@ -27,8 +27,6 @@ cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME
 #set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
 
-
-cf set-env $CF_APP_NAME loginServiceUrl <%= p('oauth_gateway.loginServiceUrl') %>
 
 
 cf set-env $CF_APP_NAME SKIP_SSL_VALIDATION true

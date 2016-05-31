@@ -1,5 +1,5 @@
 ---
-name: oauth_gateway_pkg
+name: hystrix_dashboard_pkg
 dependencies: []
 files:
 - hystrix-dashboard/**/*

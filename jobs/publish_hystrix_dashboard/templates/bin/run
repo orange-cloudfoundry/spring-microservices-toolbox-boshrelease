@@ -4,11 +4,11 @@ set -e # exit immediately if a simple command exits with a non-zero status
 set -u # report the usage of uninitialized variables
 
 # Setup env vars and folders for the webapp_ctl script
-source /var/vcap/jobs/publish_oauth_gateway/helpers/ctl_setup.sh 'publish_oauth_gateway'
+source /var/vcap/jobs/publish_hystrix_dashboard/helpers/ctl_setup.sh 'publish_hystrix_dashboard'
 
-/var/vcap/jobs/publish_oauth_gateway/bin/errand.sh
+/var/vcap/jobs/publish_hystrix_dashboard/bin/errand.sh
 
 EXITSTATUS=0
 
-echo "Errand publish_oauth_gateway is complete; exit status $EXITSTATUS"
+echo "Errand publish_hystrix_dashboard is complete; exit status $EXITSTATUS"
 exit $EXITSTATUS
