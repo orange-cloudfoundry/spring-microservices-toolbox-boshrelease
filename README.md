@@ -43,7 +43,10 @@ prerequisite:
 
 ### Spring Cloud Dataflow for Cloudfoundry
 
+This release provide 1 bosh errand, pushing cf application for :
+* spring cloud dataflow server
 
+It requires a redis service in the cloudfoundry marketplace.
 
 usefull links: 
 * http://docs.spring.io/spring-cloud-dataflow/docs/current-SNAPSHOT/reference/htmlsingle/#dashboard-introduction
@@ -52,8 +55,21 @@ usefull links:
 
 prerequisite:
 * a cloudfoundry org admin account
-* marketplace with mysql for spring cloud dataflow server
+* marketplace with redis for spring cloud dataflow server
 
+
+### Spring Cloud Hystrix Dashboard
+
+This release provide 1 bosh errand, pushing cf application for :
+* hystrix dashboard
+
+usefull links:
+* http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_circuit_breaker_hystrix_dashboard
+* https://blog.de-swaef.eu/the-netflix-stack-using-spring-boot-part-2-hystrix/
+
+prerequisite:
+* a cloudfoundry org admin account
+* open cf application security group, so that dashboard can reach remote Hystrix Enable stream.
 
 
 ## Usage
