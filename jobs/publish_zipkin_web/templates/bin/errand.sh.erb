@@ -26,7 +26,7 @@ cf push $CF_APP_NAME  -p /var/vcap/packages/zipkin-web-all-pkg/zipkin-web-1.34.0
 
 #map the route on specified domain
 cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME  
-
+cf set-env  JBP_CONFIG_CONTAINER_CERTIFICATE_TRUST_STORE '{enabled: true}'
 
 #set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
