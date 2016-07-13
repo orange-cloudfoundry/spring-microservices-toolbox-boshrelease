@@ -36,7 +36,7 @@ cf map-route $CF_APP_NAME $CF_DOMAIN --hostname $CF_APP_NAME
 
 #set cf env properties
 cf set-env $CF_APP_NAME JAVA_OPTS "-Djava.security.egd=file:/dev/urandom"
-cf set-env  JBP_CONFIG_CONTAINER_CERTIFICATE_TRUST_STORE '{enabled: true}'
+cf set-env $CF_APP_NAME JBP_CONFIG_CONTAINER_CERTIFICATE_TRUST_STORE '{enabled: true}'
 
 # the root domain to use when mapping routes
 #SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: .redacted-domain
@@ -52,11 +52,11 @@ cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN $DATAFLOW_CF_D
 cf set-env $CF_APP_NAME SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION true
 
 
-cf set-env dataflow-server SECURITY_BASIC_ENABLED false
+cf set-env $CF_APP_NAME SECURITY_BASIC_ENABLED false
 
 #todo template basic oauth or use Oauth2 login
-cf set-env dataflow-server SECURITY_USER_NAME admin
-cf set-env dataflow-server SECURITY_USER_PASSWORD xxxxx
+cf set-env $CF_APP_NAME SECURITY_USER_NAME admin
+cf set-env $CF_APP_NAME SECURITY_USER_PASSWORD xxxxx
 
 
 #start cf app
